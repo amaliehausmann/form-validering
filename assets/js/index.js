@@ -31,7 +31,7 @@ myForm.addEventListener('input', (event) => {
         firstNameError.style.display = 'none';
     } else{
         console.log('Fornavnet er IKKE langt nok');
-        firstNameError.textContent = 'Fornavn skal udfyldes!';
+        firstNameError.textContent = 'Fornavn skal være minimum 2 tegn';
         myFirstName.classList.remove('valid');
         myFirstName.classList.add('invalid');
         firstNameError.style.display = 'block';
@@ -44,14 +44,14 @@ myForm.addEventListener('input', (event) => {
         myLastName.classList.add('valid');
         lastNameError.style.display = 'none';
     } else{
-        console.log('Efternavnet er ÍKKE langt nok');
-        lastNameError.textContent = 'Efternavn skal udfyldes!';
+        console.log('Efternavnet er IKKE langt nok');
+        lastNameError.textContent = 'Efternavn skal være minimum 2 tegn';
         myLastName.classList.remove('valid');
         myLastName.classList.add('invalid');
         lastNameError.style.display = 'block';
     }
 
-    if (myAdress.value.trim().length > 5){
+    if (myAdress.value.trim().length > 4){
         console.log('Adressen er lang nok');
         adressError.textContent = '';
         myAdress.classList.remove('invalid');
@@ -60,7 +60,7 @@ myForm.addEventListener('input', (event) => {
     } else{
         console.log('Adressen er IKKE lang nok');
         myAdress.classList.toggle('errorMarking');
-        adressError.textContent = 'Adresse skal udfyldes!';
+        adressError.textContent = 'Adresse skal være minimum 5 tegn';
         myAdress.classList.remove('valid');
         myAdress.classList.add('invalid');
         adressError.style.display = 'block';
@@ -74,7 +74,7 @@ myForm.addEventListener('input', (event) => {
         postalError.style.display = 'none';
     }  else{
         console.log('Dette er IKKE et gyldigt postnummer');
-        postalError.textContent = 'Postnummer skal udfyldes!';
+        postalError.textContent = 'Postnummer må kun være tal';
         myPostalNumber.classList.remove('valid');
         myPostalNumber.classList.add('invalid');
         postalError.style.display = 'block';
@@ -88,7 +88,7 @@ myForm.addEventListener('input', (event) => {
         emailError.style.display = 'none';
     } else{
         console.log('Dette er IKKE en gyldig email');
-        emailError.textContent = 'Email skal udfyldes!';
+        emailError.textContent = 'Email skal være gyldig';
         myEmail.classList.remove('valid');
         myEmail.classList.add('invalid');
         emailError.style.display = 'block';
@@ -101,6 +101,8 @@ myButton.addEventListener('click', (event) =>{
 
     if(myFirstName.value.trim().length > 1 && myLastName.value.trim().length > 1 && myAdress.value.trim().length > 5 && postalValidation(myPostalNumber.value) && emailValidation(myEmail.value)){
         console.log('Formen er udfyldt korrekt');
+
+        console.clear();
 
         let myResponseElement = document.createElement('h2');
         myResponseElement.innerText = 'Tak for din tilmelding!';

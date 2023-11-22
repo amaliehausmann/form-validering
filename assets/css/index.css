@@ -53,6 +53,7 @@ body{
     display: none;
     width: fit-content;
     padding: 0.5vw;
+    border-radius: 5px;
 }
 
 .invalid{

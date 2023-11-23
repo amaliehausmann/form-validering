@@ -128,7 +128,7 @@ myButton.addEventListener('click', (event) =>{
         alert('Formularen skal udfyldes!')
     }
 
-})
+});
 
 function postalValidation(postnummer){
     let postalRegex = /^\d+$/;
@@ -136,7 +136,7 @@ function postalValidation(postnummer){
     let isValid = postalRegex.test(postnummer);
 
     return isValid;
-}
+};
 
 function emailValidation(email){
     let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -144,4 +144,4 @@ function emailValidation(email){
     let isValid = emailRegex.test(email);
 
     return isValid;
-}
+};

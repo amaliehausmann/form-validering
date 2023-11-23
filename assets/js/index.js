@@ -19,10 +19,7 @@ const emailError = document.getElementById('myEmailError');
 
 const myButton = document.getElementById('submitButton');
 
-
-myForm.addEventListener('input', (event) => {
-    event.preventDefault();
-
+myFirstName.addEventListener('input', (event) => {
     if (myFirstName.value.trim().length > 1) {
         console.log('Fornavnet er langt nok');
         firstNameError.textContent = '';
@@ -35,8 +32,10 @@ myForm.addEventListener('input', (event) => {
         myFirstName.classList.remove('valid');
         myFirstName.classList.add('invalid');
         firstNameError.style.display = 'block';
-    }
+    } 
+});
 
+myLastName.addEventListener('input', (event) => {
     if (myLastName.value.trim().length > 1){
         console.log('Efternavnet er langt nok');
         lastNameError.textContent = '';
@@ -50,7 +49,10 @@ myForm.addEventListener('input', (event) => {
         myLastName.classList.add('invalid');
         lastNameError.style.display = 'block';
     }
+});
 
+myAdress.addEventListener('input', (event) => {
+    
     if (myAdress.value.trim().length > 4){
         console.log('Adressen er lang nok');
         adressError.textContent = '';
@@ -59,13 +61,16 @@ myForm.addEventListener('input', (event) => {
         adressError.style.display = 'none';
     } else{
         console.log('Adressen er IKKE lang nok');
-        myAdress.classList.toggle('errorMarking');
         adressError.textContent = 'Adresse skal være minimum 5 tegn';
         myAdress.classList.remove('valid');
         myAdress.classList.add('invalid');
         adressError.style.display = 'block';
     }
 
+});
+
+myPostalNumber.addEventListener('input', (event) => {
+    
     if (postalValidation(myPostalNumber.value)){
         console.log('Dette er et gyldigt postnummer');
         postalError.textContent = '';
@@ -79,7 +84,9 @@ myForm.addEventListener('input', (event) => {
         myPostalNumber.classList.add('invalid');
         postalError.style.display = 'block';
     }
+});
 
+myEmail.addEventListener('input', (event) => {
     if(emailValidation(myEmail.value)){
         console.log('Dette er en gyldig email')
         emailError.textContent = '';
@@ -93,8 +100,8 @@ myForm.addEventListener('input', (event) => {
         myEmail.classList.add('invalid');
         emailError.style.display = 'block';
     }
-
 });
+
 
 myButton.addEventListener('click', (event) =>{
     event.preventDefault();

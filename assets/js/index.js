@@ -1,5 +1,6 @@
 const formParent = document.getElementById('myForm');
 const formContain = document.getElementById('formContainer');
+const heading = document.getElementById('header');
 
 const myFirstName = document.getElementById('firstName');
 const firstNameError = document.getElementById('firstNameError');
@@ -117,12 +118,11 @@ myButton.addEventListener('click', (event) =>{
         formContain.appendChild(myResponseElement);
 
         formParent.style.display = 'none';
+        heading.style.display = 'none';
 
         myResponseElement.style.display = 'block';
         myResponseElement.style.textAlign = 'center';
         myResponseElement.style.marginTop = '20%';
-        myResponseElement.style.fontFamily = 'sans-serif'
-        myResponseElement.style.color = 'white';
         myResponseElement.style.fontSize = '4vw';
     } else{
         alert('Formularen skal udfyldes!')

@@ -17,7 +17,6 @@ const postalError = document.getElementById('postalNumberError');
 const myEmail = document.getElementById('myEmail');
 const emailError = document.getElementById('myEmailError');
 
-
 const myButton = document.getElementById('submitButton');
 
 myFirstName.addEventListener('input', (event) => {
